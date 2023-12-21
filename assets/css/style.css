@@ -121,7 +121,7 @@ a:hover {
 .btn-brand {
   background-color: var(--heading-color);
   border-color: var(--bg-color2);
-  color: black;
+  color: var(--bg-color);
 }
 
 .btn-brand:hover,
