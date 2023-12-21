@@ -20,3 +20,25 @@ let typed = new Typed(".auto-type", {
   backSpeed: 150,
   loop: true
 });
+// mail send
+emailjs.init('6WHYOZSIeuLfoTwTh')
+const btn = document.getElementById('form_submit_btn');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_8arkajs';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
